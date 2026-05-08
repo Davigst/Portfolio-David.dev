@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "2024",
+    title: "Desarrollador Web",
+    company: "PowerDent",
+    description:
+      "Desarrollé una página web para un consultorio odontológico, enfocada en mejorar su presencia digital y accesibilidad.",
+    link: "https://powerdent.netlify.app/",
+  },
+  {
+    date: "2025",
+    title: "Desarroollo de Apps",
+    company: "Peru Data Recovery",
+    description:
+      "Participé en el desarrollo y mejora de aplicaciones móviles, colaborando en proyectos del sector salud y contribuyendo tanto a funcionalidades como a diseño de interfaces.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

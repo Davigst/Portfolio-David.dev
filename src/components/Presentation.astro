@@ -1,0 +1,52 @@
+---
+const personalImageAlt = "David Gutierrez"
+import Badge from "../components/Badge.astro"
+import LinkedInIcon from "../components/icons/LinkedIn.astro"
+import GitHubIcon from "./icons/GitHub.astro"
+import MailIcon from "../components/icons/Mail.astro"
+import SocialPill from "../components/SocialPill.astro"
+---
+
+<div class="max-w-xl">
+    <div class="flex gap-4 mb-4">
+        <img 
+        	class="rounded-full size-12 mb-4" 
+        	src="https://avatars.githubusercontent.com/u/1561955?v=4"
+        	alt={personalImageAlt}
+        />
+        <a 
+			href="https://www.linkedin.com/in/david-jesus-gutierrez-sotomayor-086243328"
+			target="_blank"
+			rel="noopener"
+			class="flex items-center transition md:justify-center md:hover:scale-105"
+        >
+			<Badge>Disponible para trabajar</Badge>
+		</a>
+    </div>
+
+    <h1 class="anim-fade-in anim-delay-1 text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white">
+
+        Hola, soy David
+    </h1>
+    <p
+        class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+    >
+        
+        <strong>Soy un Ingeniero de Software, egresado de SENATI.</strong>
+        Cuento con experiencia en desarrollo de aplicaciones web y móviles, participando en proyectos del sector tecnológico y diseñando soluciones orientadas al usuario.
+    </p>
+    <nav class="flex gap-4 mt-8 flex-wrap">
+		<SocialPill href="https://www.linkedin.com/in/david-jesus-gutierrez-sotomayor-086243328">
+			<LinkedInIcon class="size-4 md:size-6"/>
+			LinkedIn
+		</SocialPill>
+		<SocialPill href="https://github.com/Davigst">
+			<GitHubIcon class="size-4 md:size-6"/>
+			Github
+		</SocialPill>
+		<SocialPill href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">
+			<MailIcon class="size-4 md:size-6"/>
+			dgutierrezsoto18@gmail.com
+		</SocialPill>
+    </nav>
+</div>
