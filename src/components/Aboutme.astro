@@ -1,70 +1,55 @@
 ---
- const personalImageAlt = "Miguel Ángel"
+import { PERSONAL_INFO } from "../data/personal";
+import Section from "./SectionContainer.astro";
+import Title from "./TitleSection.astro";
+import Badge from "./Badge.astro";
 ---
 
-<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
-  <div
-    class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
-  >
-    <p>
-      Soy David, Ingeniero de Software con enfoque en Inteligencia Artificial, egresado de SENATI.
-    </p>
+<Section id="about" title="About Me">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Photo Column -->
+        <div
+            class="relative group mx-auto drop-shadow-[8px_8px_0_#7836cf]"
+            data-aos="fade-right"
+        >
+            <div class="absolute -inset-1 rounded-2xl"></div>
+            <div class="relative">
+                <img
+                    src="/images/jhon-doe.png"
+                    alt={`${PERSONAL_INFO.name} Portrait`}
+                    class="rounded-2xl w-full max-w-sm object-cover"
+                />
+            </div>
+        </div>
 
-    <p>
-      He participado en proyectos reales de <strong
-        >Desarrollo web y App móvil</strong
-      >. colaborando en una app de servicios médicos, diseñando el frontend de una aplicación en Android Studio y desarrollando una web para el sector odontológico.
-    </p>
-
-    <p>
-      Actualmente sigo mejorando mis habilidades y busco una oportunidad para crecer profesionalmente como desarrollador.
-    </p>
-  </div>
-
-  <img width="200" height="200" src="/me.png" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 " style="object-position: 50% 50%">
-
-</article>
-
-{/* FRASES PROHIBIDAS EN VUESTRO PORTFOLIO
-
-<p>
-  Mi sueño es encontrar mi primer empleo en el mundo de la programación. Una empresa donde pueda seguir aprendiendo. ❌
-</p>
-
-<p>
-  ❌ Apasionado de la programación desde chekitito. Me encantan los ordenadores y crear páginas web buenas y rápidas con la última tecnología.
-</p>
-
-<p>
-  Trabajo bien en equipo. Siempre estoy aprendiendo cosas nuevas.
-</p>
-
--------------------------------------
-
---------------------------------------
-
-<p>
-  ¡Soy Leo! Estudié Derecho Empresarial y, tras años ejerciendo, me pasé al mundo de la Programación. Desde entonces disfruto creando experiencias web para los usuarios.
-</p>
-
-<p>
-  Entre mis éxitos destaco que durante el Grado Superior, ayudé a mis compañeros a aprender sobre TDD. Me encanta el testing, creo en su importancia, y me gusta compartir mi conocimiento sobre ello.
-</p>
-
-<p>
-  Cuento con experiencia desarrollando aplicaciones móviles, y he creado una iniciativa llamada X para mezclar mis dos pasiones: la programación y el derecho. Ayudando a la sociedad a acceso a una defensa justa.
-</p>
-
----------------------------------------
-
-<p>Me llamo Sara, tengo 25 años y soy de Santiago, Chile 🇨🇱. Terminé mis estudios como Desarrolladora Web. Me encanta enfocarme en la parte del rendimiento, para ofrecer la mejora experiencia al usuario.</p>
-
-<p>
-  Colaboro en la organización del MeetUp local BeerJS donde reunimos a desarrolladores de Santiago para compartir conocimiento y experiencias. El año 2023 hicimos un total de 25 charlas con más de 2000 asistentes.
-</p>
-
-<p>
-  Además de participar activamente en la comunidad, he participado en la Hackathon de Midudev quedando en 3er puesto con mi proyecto _Chatty_, donde usando IA podías interactuar con un PDF. ¡Échale un vistazo!
-</p>
-
-*/}
+        <!-- Description Column -->
+        <div class="flex flex-col gap-6" data-aos="fade-left">
+            <Title level={3}>
+                {PERSONAL_INFO.title}
+            </Title>
+            <p
+                class="text-lg md:text-xl text-gray-300 leading-relaxed font-light"
+            >
+                Hola! Soy <span class="text-white font-semibold"
+                    >{PERSONAL_INFO.name}</span
+                >,
+                {PERSONAL_INFO.description}
+            </p>
+            <p
+                class="text-lg md:text-xl text-gray-300 leading-relaxed font-light"
+            >
+                {PERSONAL_INFO.journey}
+            </p>
+            <div class="flex flex-wrap gap-4 mt-4">
+                {
+                    PERSONAL_INFO.skills &&
+                        PERSONAL_INFO.skills.map((skill) => (
+                            <Badge class="px-4 py-2 bg-white/5 text-sm text-gray-400">
+                                {skill}
+                            </Badge>
+                        ))
+                }
+            </div>
+        </div>
+    </div>
+</Section>

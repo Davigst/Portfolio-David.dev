@@ -5,8 +5,48 @@ import LinkedInIcon from "../components/icons/LinkedIn.astro"
 import GitHubIcon from "./icons/GitHub.astro"
 import MailIcon from "../components/icons/Mail.astro"
 import SocialPill from "../components/SocialPill.astro"
+import TypeEfect from "../components/home/typeEfect.jsx";
+import SocialIcons from "../components/socialIcons/socialIcons.jsx";
 ---
 
+<header class="relative max-h-xl">
+
+  <main
+    class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4"  
+  >
+    <h1 class="text-4xl md:text-7xl font-bold text-white text-shadow mt-10" 
+    data-aos="fade-up"
+    data-aos-delay="200">
+      Hola, soy David
+    </h1>
+
+    <TypeEfect client:visible />{/**/}
+
+    <p
+        class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold 
+        dark:text-gray-300" 
+        data-aos="fade-up"
+        data-aos-delay="600"
+    >
+        
+        <strong>Soy un Ingeniero de Software, egresado de SENATI.</strong>
+        Cuento con experiencia en desarrollo de aplicaciones web y móviles, participando en proyectos del sector tecnológico y diseñando soluciones orientadas al usuario.
+    </p>
+    <SocialIcons client:visible />
+    {/*<a
+      target="_blank"
+      href="https://drive.google.com/file/d/1dIUZSRRXzl_TCSAeoRfMKT_SvydItgUd/view?usp=sharing"
+      class="px-6 py-3 bg-primary hover:bg-secondary mt-3 text-white font-semibold rounded-3xl transition-all duration-150
+         drop-shadow-[2px_2px_0_#0debd8] active:translate-0.5 active:drop-shadow-none"
+    >
+      Mi Curriculum
+    </a>*/}
+  </main>
+</header>
+
+
+
+{/*
 <div class="max-w-xl">
     <div class="flex gap-4 mb-4">
         <img 
@@ -50,3 +90,4 @@ import SocialPill from "../components/SocialPill.astro"
 		</SocialPill>
     </nav>
 </div>
+*/}
