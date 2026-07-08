@@ -6,10 +6,10 @@ import Badge from "./Badge.astro";
 ---
 
 <Section id="about" title="About Me">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
         <!-- Photo Column -->
         <div
-            class="relative group mx-auto drop-shadow-[8px_8px_0_#7836cf]"
+            class="relative group mx-auto flex justify-center drop-shadow-[5px_5px_0_#7836cf] drop-shadow-[8px_8px_0_#7836cf]"
             data-aos="fade-right"
         >
             <div class="absolute -inset-1 rounded-2xl"></div>
@@ -17,13 +17,15 @@ import Badge from "./Badge.astro";
                 <img
                     src="/images/jhon-doe.png"
                     alt={`${PERSONAL_INFO.name} Portrait`}
-                    class="rounded-2xl w-full max-w-sm object-cover"
+                    class="w-full max-w-xs sm:max-w-sm rounded-2xl object-cover"
                 />
             </div>
         </div>
 
         <!-- Description Column -->
-        <div class="flex flex-col gap-6" data-aos="fade-left">
+        <div class="flex flex-col gap-6 text-center md:text-left items-center md:items-start"
+            data-aos="fade-left"
+            >
             <Title level={3}>
                 {PERSONAL_INFO.title}
             </Title>
@@ -40,16 +42,7 @@ import Badge from "./Badge.astro";
             >
                 {PERSONAL_INFO.journey}
             </p>
-            <div class="flex flex-wrap gap-4 mt-4">
-                {
-                    PERSONAL_INFO.skills &&
-                        PERSONAL_INFO.skills.map((skill) => (
-                            <Badge class="px-4 py-2 bg-white/5 text-sm text-gray-400">
-                                {skill}
-                            </Badge>
-                        ))
-                }
-            </div>
+            
         </div>
     </div>
 </Section>
