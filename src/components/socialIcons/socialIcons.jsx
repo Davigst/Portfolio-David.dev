@@ -6,7 +6,8 @@ import {
 
 const SocialIcons = () => {
   return (
-    <div className="my-5 flex items-center justify-center" data-aos="fade-up" data-aos-delay="800">
+    <div className="my-5 flex items-center justify-center" 
+    >
       <a
         href="https://www.linkedin.com/in/david-jesus-gutierrez-sotomayor-086243328"
         target="_blank"
